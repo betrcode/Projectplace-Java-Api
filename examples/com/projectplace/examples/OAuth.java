@@ -17,16 +17,18 @@ public class OAuth {
 		Consumer consumer = new Consumer(consumerKey, consumerSecret);
 		Provider provider = new Provider(consumer);
 		
-		System.out.println("Request token key: " + consumer.getToken());
-		System.out.println("Request token secret: " + consumer.getTokenSecret());
 		System.out.println("Open this url in a browser: " + provider.getRequestTokenUrl());
+		Token reqToken = provider.getRequestToken();
+		System.out.println("Request token key: " + reqToken.key);
+		System.out.println("Request token secret: " + reqToken.val);
+		
 		System.out.println("Paste the oauth verifer and press enter");
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String oauth_verifier = reader.readLine();
-		Token access = provider.getAccessToken(oauth_verifier);
+		Token accessToken = provider.getAccessToken(oauth_verifier);
 		
-		System.out.println("Access token key: " + access.key);
-		System.out.println("Access token secret: " + access.val);
+		System.out.println("Access token key: " + accessToken.key);
+		System.out.println("Access token secret: " + accessToken.val);
 	}
 }
