@@ -26,6 +26,9 @@ public final class Assignment extends APIResponse {
 	
 	public Date getDueDate() {
 		try {
+			if (due_date == "") {
+				return null;
+			}
 			due_time = due_time == ""? "00:00": due_time;
 			return new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(due_date + " " + due_time);
 		} catch (ParseException e) {

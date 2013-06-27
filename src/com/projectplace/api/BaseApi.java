@@ -63,7 +63,7 @@ class BaseApi {
     	return mapper;
     }
     
-    public <T> T get(String url, Class<T> cls) {
+    protected <T> T get(String url, Class<T> cls) {
     	ObjectMapper mapper = mapper();
     	T obj = null;
 		try {
@@ -77,7 +77,7 @@ class BaseApi {
 		return obj;
     }
 
-    public <T> List<T> getAsList(String url, Class<T> cls) {
+    protected <T> List<T> getAsList(String url, Class<T> cls) {
     	List<T> lst = new ArrayList<T>();
     	try {
         	JsonFactory factory = new JsonFactory();
