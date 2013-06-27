@@ -4,9 +4,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.projectplace.api.APIResponse;
+import com.projectplace.api.APISerializable;
 
-public final class Assignment extends APIResponse {
+public final class Assignment extends APISerializable {
 
 	public static final class Assignee {
 		public String name;

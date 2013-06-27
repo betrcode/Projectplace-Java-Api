@@ -14,12 +14,12 @@ public class Project extends BaseApi {
 	}
 	
 	public List<Member> getMembers(int projectId) {
-		String url = String.format("/project/%s/members.json", projectId);
+		String url = String.format("/1/project/%s/members.json", projectId);
 		return this.getAsList(url, Member.class);
 	}
 	
 	public List<Group> getGroups(int projectId) {
-		String url = String.format("/project/%s/groups.json", projectId);
+		String url = String.format("/1/project/%s/groups.json", projectId);
 		return this.getAsList(url, Group.class);
 	}
 

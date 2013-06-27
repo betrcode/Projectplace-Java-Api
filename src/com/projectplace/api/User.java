@@ -15,26 +15,26 @@ public class User extends BaseApi {
 	}
 	
 	public Profile getMyProfile() {
-		return this.get("/user/me/profile.json", Profile.class);
+		return this.get("/1/user/me/profile.json", Profile.class);
 	}
 	
 	public Profile getProfile(int userId) {
-		String url = String.format("/user/%s/profile.json", userId);
+		String url = String.format("/1/user/%s/profile.json", userId);
 		return this.get(url, Profile.class);
 	}
 
 	public List<Project> getMyProjects() {
-		return this.getAsList("/user/me/projects.json", Project.class);
+		return this.getAsList("/1/user/me/projects.json", Project.class);
 	}
 	
 	public List<Project> getProjects(int userId) {
-		String url = String.format("/user/%s/projects.json", userId);
+		String url = String.format("/1/user/%s/projects.json", userId);
 		return this.getAsList(url, Project.class);
 	}
 	
 	public URL getAvatar(int userId) {
 		Consumer consumer = getConsumer();
-		String url = String.format("/avatar/%s/%s", userId, consumer.getToken());
+		String url = String.format("/1/avatar/%s/%s", userId, consumer.getToken());
 		try {
 			return new URL(API_BASE_PATH + url);
 		} catch (Exception ex) {
@@ -44,7 +44,7 @@ public class User extends BaseApi {
 	}
 	
 	public List<Assignment> getMyAssignments() {
-		return this.getAsList("/user/me/assignments.json", Assignment.class);
+		return this.getAsList("/1/user/me/assignments.json", Assignment.class);
 	}
 
 }

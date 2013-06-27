@@ -21,7 +21,7 @@ class BaseApi {
 	private final static Logger LOGGER = Logger.getLogger(BaseApi.class.getName());
 	
 	private final Consumer consumer;
-	protected static final String API_BASE_PATH = "https://api.projectplace.com/1";
+	protected static final String API_BASE_PATH = "https://api.projectplace.com";
 
 	BaseApi(Consumer consumer) {
     	this.consumer = consumer;
