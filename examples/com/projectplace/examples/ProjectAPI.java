@@ -15,7 +15,7 @@ public class ProjectAPI {
 	private static final String consumerSecret = "xxxx";
 	private static final String accessKey = "xxxxx";
 	private static final String accessSecret = "xxxx";
-	private static final int projectId = 303696231;
+	private static final int projectId = 123456;
 
 	public static void main(String[] args) {
 		Token consumerToken = new Token(consumerKey, consumerSecret);

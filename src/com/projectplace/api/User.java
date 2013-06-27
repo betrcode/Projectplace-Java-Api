@@ -12,7 +12,6 @@ public class User extends BaseApi {
 
 	User(Consumer consumer) {
 		super(consumer);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Profile getMyProfile() {

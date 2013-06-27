@@ -8,7 +8,7 @@ public class ApiBuilder {
 	
 	private final Consumer consumer;
 	
-	public ApiBuilder(Consumer consumer) {
+	ApiBuilder(Consumer consumer) {
 		this.consumer = consumer;
 	}
 	
