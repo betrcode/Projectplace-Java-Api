@@ -22,8 +22,7 @@ public class User extends BaseApi {
 		String url = String.format("/user/%s/profile.json", userId);
 		return this.get(url, Profile.class);
 	}
-	
-	
+
 	public List<Project> getMyProjects() {
 		return this.getAsList("/user/me/projects.json", Project.class);
 	}
