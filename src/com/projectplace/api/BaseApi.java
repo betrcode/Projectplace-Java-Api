@@ -19,7 +19,7 @@ public abstract class BaseApi implements API {
 	private final Consumer consumer;
 	public static final String API_BASE_PATH = "https://api.projectplace.com";
 
-	BaseApi(Consumer consumer) {
+	protected BaseApi(Consumer consumer) {
     	this.consumer = consumer;
     }
     

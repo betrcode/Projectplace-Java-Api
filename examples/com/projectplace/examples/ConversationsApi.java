@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.projectplace.api.ApiBuilder;
 import com.projectplace.api.Cursor;
-import com.projectplace.api.Posts;
 import com.projectplace.api.posts.Comment;
 import com.projectplace.api.posts.Post;
+import com.projectplace.api.services.Posts;
 import com.projectplace.oauth.Consumer;
 import com.projectplace.oauth.Token;
 

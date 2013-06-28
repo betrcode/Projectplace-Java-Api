@@ -3,9 +3,9 @@ package com.projectplace.examples;
 import java.util.List;
 
 import com.projectplace.api.ApiBuilder;
-import com.projectplace.api.Project;
 import com.projectplace.api.project.Group;
 import com.projectplace.api.project.Member;
+import com.projectplace.api.services.Project;
 import com.projectplace.oauth.Consumer;
 import com.projectplace.oauth.Token;
 

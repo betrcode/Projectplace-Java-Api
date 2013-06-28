@@ -1,7 +1,7 @@
 package com.projectplace.examples;
 
 import com.projectplace.api.ApiBuilder;
-import com.projectplace.api.User;
+import com.projectplace.api.services.User;
 import com.projectplace.api.user.Profile;
 import com.projectplace.oauth.Consumer;
 import com.projectplace.oauth.Token;
