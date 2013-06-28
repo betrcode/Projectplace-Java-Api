@@ -6,4 +6,5 @@ public interface Cursor<T extends APISerializable> {
 
 	void setLimit(int count);
 	List<T> next();
+	List<T> prev();
 }

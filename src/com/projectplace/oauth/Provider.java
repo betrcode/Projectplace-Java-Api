@@ -1,5 +1,7 @@
 package com.projectplace.oauth;
 
+import com.projectplace.api.BaseApi;
+
 import oauth.signpost.OAuth;
 import oauth.signpost.basic.DefaultOAuthConsumer;
 import oauth.signpost.basic.DefaultOAuthProvider;
@@ -10,9 +12,9 @@ public class Provider extends DefaultOAuthProvider {
 	private Token reqToken;
 
 	public Provider(DefaultOAuthConsumer consumer) {
-		super("https://api.projectplace.com/initiate",
-				"https://api.projectplace.com/token",
-				"https://api.projectplace.com/authorize");
+		super(BaseApi.API_BASE_PATH + "/initiate",
+				BaseApi.API_BASE_PATH + "/token",
+				BaseApi.API_BASE_PATH + "/authorize");
 		this.consumer = consumer;
 	}
 	
