@@ -17,13 +17,11 @@ public class Comment extends APISerializable {
 	@JsonProperty(value="created_time_local_iso")
 	public Date created_time;
 
-	public static final class Mentioned extends APISerializable {
-		public int id;
-		public String name, type;
+	public static final class Mentioned extends com.projectplace.api.helpers.User {
+		public String type;
 	}
 	
-	public static final class User extends APISerializable {
-		public int id;
+	public static final class User extends com.projectplace.api.helpers.User {
 		public String first_name, last_name;
 		public URL image;
 	}

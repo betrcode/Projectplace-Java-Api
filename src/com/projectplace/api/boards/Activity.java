@@ -8,17 +8,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.projectplace.api.APISerializable;
 import com.projectplace.api.helpers.DateTimeSerializer;
+import com.projectplace.api.helpers.User;
 import com.projectplace.api.posts.Comment.Attachment;
 
 public final class Activity extends APISerializable {
 
-	public static final class Creator {
-		public String type, name;
-		public int id;
+	public static final class Creator extends User {
+		public String type;
 	}
-	public static final class Assignee {
-		public String type, name;
-		public int id;
+	public static final class Assignee extends User {
+		public String type;
 		public boolean accepted;
 	}
 	

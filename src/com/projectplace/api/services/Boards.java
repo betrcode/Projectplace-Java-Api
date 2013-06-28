@@ -5,6 +5,7 @@ import java.util.List;
 import com.projectplace.api.BaseApi;
 import com.projectplace.api.boards.Activity;
 import com.projectplace.api.boards.Board;
+import com.projectplace.api.boards.Comment;
 import com.projectplace.oauth.Consumer;
 
 public class Boards extends BaseApi {
@@ -37,4 +38,10 @@ public class Boards extends BaseApi {
 		String url = String.format("/1/activity/%d/properties.json", activityId);
 		return get(url, Activity.class);
 	}
+	
+	public List<Comment> activityComments(int activityId) {
+		String url = String.format("/1/activity/%d/comments.json", activityId);
+		return getAsList(url, Comment.class);
+	}
+	
 }
