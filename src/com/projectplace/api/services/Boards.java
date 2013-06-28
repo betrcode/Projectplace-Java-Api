@@ -32,4 +32,9 @@ public class Boards extends BaseApi {
 		String url = String.format("/1/board/%d/activities.json", boardId);
 		return getAsList(url, Activity.class);
 	}
+	
+	public Activity activity(int activityId) {
+		String url = String.format("/1/activity/%d/properties.json", activityId);
+		return get(url, Activity.class);
+	}
 }
