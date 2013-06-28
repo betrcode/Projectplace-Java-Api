@@ -1,8 +1,8 @@
 package com.projectplace.examples;
 
 import com.projectplace.api.ApiBuilder;
-import com.projectplace.api.services.User;
-import com.projectplace.api.user.Profile;
+import com.projectplace.api.services.Users;
+import com.projectplace.api.users.Profile;
 import com.projectplace.oauth.Consumer;
 import com.projectplace.oauth.Token;
 
@@ -18,7 +18,7 @@ public class UserAPI {
 		Token accessToken = new Token(accessKey, accessSecret);
 		Consumer consumer = Consumer.withAccessToken(consumerToken, accessToken);
 		ApiBuilder api = ApiBuilder.useConsumer(consumer);
-		User user = api.service(User.class);
+		Users user = api.service(Users.class);
 
 		Profile profile = user.getMyProfile();
 		System.out.println("My profile:");

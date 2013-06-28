@@ -3,9 +3,9 @@ package com.projectplace.examples;
 import java.util.List;
 
 import com.projectplace.api.ApiBuilder;
-import com.projectplace.api.project.Group;
-import com.projectplace.api.project.Member;
-import com.projectplace.api.services.Project;
+import com.projectplace.api.projects.Group;
+import com.projectplace.api.projects.Member;
+import com.projectplace.api.services.Projects;
 import com.projectplace.oauth.Consumer;
 import com.projectplace.oauth.Token;
 
@@ -21,7 +21,7 @@ public class ProjectAPI {
 		Token accessToken = new Token(accessKey, accessSecret);
 		Consumer consumer = Consumer.withAccessToken(consumerToken, accessToken);
 		ApiBuilder api = ApiBuilder.useConsumer(consumer);
-		Project projectApi = api.service(Project.class);
+		Projects projectApi = api.service(Projects.class);
 		
 		List<Member> members = projectApi.getMembers(projectId);
 		System.out.println(String.format("There are %d members in the project %d", members.size(), projectId));
