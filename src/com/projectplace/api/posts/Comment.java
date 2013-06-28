@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.projectplace.api.APISerializable;
+import com.projectplace.api.helpers.DateTimeSerializer;
 
 public class Comment extends APISerializable {
 	public String id, text, sent_from;

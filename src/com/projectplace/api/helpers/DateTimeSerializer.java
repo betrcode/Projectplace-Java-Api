@@ -1,4 +1,4 @@
-package com.projectplace.api.posts;
+package com.projectplace.api.helpers;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -10,19 +10,25 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
-class DateTimeSerializer extends JsonDeserializer<Date> {
+public class DateTimeSerializer extends JsonDeserializer<Date> {
 
 	@Override
 	public Date deserialize(JsonParser val, DeserializationContext arg1)
 			throws IOException, JsonProcessingException {
 		// TODO Auto-generated method stub
-		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-		try {
-			return fmt.parse(val.getValueAsString());
-		} catch (ParseException e) {
-			e.printStackTrace();
-			return null;
+		SimpleDateFormat[] formats = {
+				new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"),
+				new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"),
+				new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ")
+		};
+		for (SimpleDateFormat fmt: formats) {
+			try {
+				return fmt.parse(val.getValueAsString());
+			} catch (ParseException e) {
+				continue;
+			}
 		}
+		return null;
 	}
 
 }
