@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.projectplace.api.APISerializable;
 import com.projectplace.api.helpers.DateTimeSerializer;
@@ -26,8 +27,11 @@ public final class Activity extends APISerializable {
 	public Assignee assignee;
 	public String title, description;
 	public URL direct_url;
+
 	@JsonDeserialize(using=DateTimeSerializer.class)
 	public Date created_time, due_date;
+	
+	@JsonProperty(value="all_attachments")
 	public List<Attachment> attachments;
 	
 }

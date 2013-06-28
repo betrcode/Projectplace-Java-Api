@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.projectplace.api.APISerializable;
 import com.projectplace.api.helpers.DateTimeSerializer;
@@ -13,7 +14,9 @@ public class Comment extends APISerializable {
 	public String post_id;
 	
 	@JsonDeserialize(using=DateTimeSerializer.class)
-	public Date created_time_local_iso;
+	@JsonProperty(value="created_time_local_iso")
+	public Date created_time;
+
 	public static final class Mentioned extends APISerializable {
 		public int id;
 		public String name, type;
@@ -28,6 +31,8 @@ public class Comment extends APISerializable {
 	public static final class Attachment extends APISerializable {
 		public int id;
 		public String name, mime_type;
+		@JsonProperty(value="url")
+		public String path;
 		
 	}
 	
