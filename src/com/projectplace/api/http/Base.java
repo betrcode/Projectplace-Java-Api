@@ -20,7 +20,6 @@ abstract class Base implements Streamable {
 		String className = callee.getClassName();
 		String methodName = callee.getMethodName();
     	try {
-    		System.out.println(className + " - " + methodName);
     		@SuppressWarnings("unchecked")
     		Class<? extends API> calleeCls = (Class<? extends API>) Class.forName(className);
     		for (Method m: calleeCls.getMethods()) {

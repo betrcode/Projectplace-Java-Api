@@ -63,12 +63,14 @@ public class Posts extends BaseApi {
 		String url = String.format("/2/conversation/post/%s/user/%d/like.json", postId, userId);
 		return this.post(url, params, Like.class); 
 	}
-	
+
+	@Volatile
 	public final Unlike unlike(String postId, int userId) {
 		String url = String.format("/2/conversation/post/%s/user/%d/unlike.json", postId, userId);
 		return this.post(url, new HashMap<String, String>(), Unlike.class);
 	}
 	
+	@Volatile
 	public final Post create(Post post) {
 		String url = String.format("/2/conversation/project/%d/post/create.json", post.project_id);
 		Map<String, String> params = new HashMap<>();
@@ -78,6 +80,7 @@ public class Posts extends BaseApi {
 		return this.post(url, params, Post.class);
 	}
 	
+	@Volatile
 	public final Comment comment(Comment comm) {
 		String url = String.format("/2/conversation/post/%s/comment/create.json", comm.post_id);
 		Map<String, String> params = new HashMap<>();
