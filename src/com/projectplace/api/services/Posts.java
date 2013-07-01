@@ -76,7 +76,7 @@ public class Posts extends BaseApi {
 	@Volatile
 	public final Post create(Post post) {
 		String url = String.format("/2/conversation/project/%d/post/create.json", post.project_id);
-		Map<String, String> params = new HashMap<>();
+		Map<String, String> params = new HashMap<String, String>();
 		params.put("text", post.text);
 		params.put("sent_from", "java-sdk");
 		params.put("artifact_name", "wall");
@@ -86,7 +86,7 @@ public class Posts extends BaseApi {
 	@Volatile
 	public final Comment comment(Comment comm) {
 		String url = String.format("/2/conversation/post/%s/comment/create.json", comm.post_id);
-		Map<String, String> params = new HashMap<>();
+		Map<String, String> params = new HashMap<String, String>();
 		params.put("sent_from", "java-sdk");
 		params.put("text", comm.text);
 		return this.post(url, params, Comment.class);

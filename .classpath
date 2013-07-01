@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="deps/jackson-annotations/src/main/java"/>
 	<classpathentry kind="src" path="examples"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="/home/kailash/workspace/projectplace-java-api/deps/signpost-core-1.2.1.2.jar"/>
@@ -9,5 +8,6 @@
 	<classpathentry kind="lib" path="/home/kailash/workspace/projectplace-java-api/deps/jackson-databind-2.2.0.jar"/>
 	<classpathentry kind="lib" path="/home/kailash/workspace/projectplace-java-api/deps/jackson-core-2.2.0.jar"/>
 	<classpathentry kind="lib" path="/home/kailash/workspace/projectplace-java-api/deps/commons-codec-1.8.jar"/>
+	<classpathentry kind="lib" path="/home/kailash/workspace/projectplace-java-api/deps/jackson-annotations/target/jackson-annotations-2.3.0-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

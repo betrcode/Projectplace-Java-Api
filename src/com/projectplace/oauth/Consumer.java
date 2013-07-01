@@ -9,6 +9,13 @@ public class Consumer extends DefaultOAuthConsumer {
 	public Consumer(String key, String secret) {
 		super(key, secret);
 	}
+
+	public static Consumer instance(Token consumer) {
+		if (Token.isValid(consumer)) {
+			return new Consumer(consumer.key, consumer.val);
+		}
+		return null;
+	}
 	
 	public static Consumer withAccessToken(Token consumer, Token access) {
 		if (Token.isValid(access) && Token.isValid(consumer)) {

@@ -32,6 +32,7 @@ public abstract class BaseApi implements API {
     	mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
     	return mapper;
     }
+
     
     private final <T> T mapStreamToClass(InputStream stream, Class<T> cls) {
     	ObjectMapper mapper = mapper();
