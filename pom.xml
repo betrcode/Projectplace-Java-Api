@@ -11,6 +11,10 @@
 
     <name>Projectplace Java API</name>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>commons-codec</groupId>
